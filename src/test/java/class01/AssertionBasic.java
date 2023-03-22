@@ -53,7 +53,7 @@ public class AssertionBasic {
         WebElement error = driver.findElement(By.xpath("//span[@id='spanMessage']"));
         String errorMsg = error.getText();
         //check if the error message is correct
-        String expectedError = "Invalid credential";
+        String expectedError = "Invalid credentials";
 
         //assert the value  --  we use it like we use if - else
         Assert.assertEquals(errorMsg,expectedError);

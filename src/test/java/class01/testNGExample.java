@@ -17,7 +17,7 @@ public class testNGExample {
     //enter the username and password , verify that u logged in
     //close the browser
 
-    public static WebDriver driver;
+    public static WebDriver driver;     //WebDriver static to be able to access it easily
     //pre condition ---> to open the browser
     //                   to set implicit wait
     @BeforeMethod
