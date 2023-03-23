@@ -20,7 +20,7 @@ public class testNGExample {
     public static WebDriver driver;     //WebDriver static to be able to access it easily
     //pre condition ---> to open the browser
     //                   to set implicit wait
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void SetupBrowser(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
@@ -30,13 +30,13 @@ public class testNGExample {
     }
 
     //post-condition --> to close the browser
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser(){
         driver.quit();
     }
     //test case 1
     //verify login functionality
-    @Test
+    @Test(groups = "regression")
     public void LoginFunctionality(){
         WebElement username=driver.findElement(By.xpath("//input[@name='txtUsername']"));
         username.sendKeys("Admin");
